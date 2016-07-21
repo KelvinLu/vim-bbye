@@ -27,14 +27,6 @@ function! s:bdelete(bang, buffer_name)
 		if winbufnr(window) != buffer | continue | endif
 		execute window . "wincmd w"
 
-		" Bprevious also wraps around the buffer list, if necessary:
-		try | exe bufnr("#") > 0 && buflisted(bufnr("#")) ? "buffer #" : "bprevious"
-		catch /^Vim([^)]*):E85:/ " E85: There is no listed buffer
-		endtry
-
-		" If found a new buffer for this window, mission accomplished:
-		if bufnr("%") != buffer | continue | endif
-
 		call s:new(a:bang) 
 	endfor
 

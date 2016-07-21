@@ -1,3 +1,6 @@
+## 1.0.2 (Jul 21, 2016)
+- Always calls `enew` when closing buffers in windows, instead of switching to another open buffer.
+
 ## 1.0.1 (Jul 23, 2013)
 - Fixes `:Bdelete`ing via buffer number. Finally, perfect!
 
